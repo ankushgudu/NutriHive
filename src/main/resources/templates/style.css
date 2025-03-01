@@ -1,0 +1,1398 @@
+html{
+    font-size:16px;
+    overflow-x:hidden
+
+}
+body{
+    font-family:'Lato', sans-serif;
+    color:#4E7337;
+}
+
+
+/***Nav***/
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 4rem;
+    display:flex;
+    align-items:center;
+    padding: 0 8vw; /* Reduced padding to shift everything slightly left */
+    padding:0 10vw;
+    z-index: 9;
+    background: #e9ede1;
+    justify-content: space-between; /* Ensures spacing on both sides */
+
+}
+.logo{
+    height:190px;
+    margin-left: -69.9px; /* Moves the logo slightly to the left */
+
+}
+.links-container{
+    display:flex;
+    gap:1rem;
+    list-style:none;
+    margin-right:14%;
+    
+
+}
+.links{
+    color:#758b51;
+    text-decoration:none;
+    text-transform:capitalize;
+    padding:.5rem 1rem;
+    transition:.2s;
+}
+.links:hover{
+    color:#76b208df;
+}
+/*hero Section*/
+#hero-section{
+    min-height:100vh;
+    padding:0 10vw;
+    display:flex;
+    justify-content:space-between;
+    align-items:center ;
+    background: #fffffe;
+}
+
+
+.hero-content{
+    width:40%;
+}
+
+
+
+
+.hero-heading{
+    font-size:4rem;
+    line-height:5rem;
+    font-weight:700;
+    color:#758b51;
+}
+.hero-line{
+    line-height:1.5rem;
+    opacity:0.75s;
+    margin-top:1.5rem;
+}
+
+.hero-action-btn-container{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+}
+/*.btn{
+    padding:1 rem 1.5rem;
+    border:none;
+    border-radius:.3rem;
+    font-size:1rem;
+    color:#3c5119;
+    background:#8db767;
+    text-transform: capitalize;
+    cursor:pointer;
+}*/
+.hero-img-container, .food-image-container{
+    min-width:30rem;
+    min-height:30rem;
+    position:relative;
+    transform:scale(0.9) translateY(1.5rem);
+}
+.background-ele{
+    width:100%;
+    height:100%;
+    position:absolute;
+
+}
+.ellipse{
+    position:absolute;
+    height:100%;
+    top:50%;
+    left:50%;
+    border-radius:100%;
+    border:.01rem solid #4E7337;
+    transform-origin:center;
+
+}
+.ellipse:nth-child(1){
+    width:80%;
+    transform:translate(-50%, -50%) rotate(20deg);
+
+}
+
+.ellipse:nth-child(2){
+    width: 90%;
+    transform:translate(-50%, -50%) rotate(40deg);
+
+}
+.ellipse:nth-child(3){
+    width: 90%;
+    transform:translate(-50%, -50%) rotate(-20deg);
+
+}
+/**.foreground-elements{
+    width:100%;
+    height:100%;
+    position:absolute;
+
+}
+
+.hero-img1{
+    position:absolute;
+    width:15rem;
+    border-radius:100%;
+}**/
+.foreground-elements {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img1 {
+    position: absolute;
+    width: 15rem;  /* Adjust size as needed */
+    border-radius: 100%;
+}
+
+.hero-img1:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1rem 1rem rgb(217, 214, 214);
+}
+
+.hero-img1:nth-child(2) {
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1rem 1rem rgb(217, 214, 214);
+}
+
+.hero-img1:nth-child(3) {
+    top: 80%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1rem 1rem rgb(217, 214, 214);
+}
+/***.review-box{
+    position:absolute;
+    width:30rem;
+    padding:1rem 2rem;
+    bottom:5%;
+    left:-25%;
+    border-radius:.5rem;
+    background:rgba(255,255,255, 0.5)  ;
+    backdrop-filter:blur(.2rem);
+}
+.reviewer-info{
+    display:flex;
+    gap:1rem;
+}
+.reviewer-img{
+    width:4rem;
+    height:4rem;
+    border-radius:100%;
+}
+.reviewer-rating{
+    display:flex;
+    gap:.1rem;
+    font-size:.7rem;
+    align-items: center;
+}
+.reviewer-rating{
+    color:#ffa800;
+}
+.reviewer-name{
+    font-weight:400;
+    font-size:1.2rem;
+    margin-top:.75rem;
+}
+.review-body{
+    display:flex;
+    gap:1rem;
+    margin-top:.5rem;
+    padding:1rem 0;
+}
+.review-body i{
+    font-size:1.4rem;
+    color:#839b5c;
+}
+.review{
+    line-height:1.75rem;
+}***/
+.review-box {
+    position: absolute;
+    width: 28rem; /* Increased width  28rem*/
+    
+    padding: 0.6rem 1.2rem; /* Reduced padding */
+    bottom: 5%;
+    left: -20%;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.25); /* More transparency */
+    backdrop-filter: blur(0.1rem); /* Soft blur */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+}
+
+
+.reviewer-info {
+    display: flex;
+    gap: 0.8rem;  /* Reduced gap */
+    align-items: center;
+    
+}
+
+.reviewer-img {
+    width: 3rem;  /* Smaller profile image */
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviewer-rating {
+    display: flex;
+    gap: 0.2rem;  /* Adjusted spacing */
+    font-size: 0.7rem;
+    align-items: center;
+    color: #ffa800;
+}
+
+.reviewer-name {
+    font-weight: 500;  /* Slightly bolder for emphasis */
+    font-size: 1rem;  /* Adjusted for compactness */
+    margin-top: 0.5rem;
+}
+
+.review-body {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.4rem;
+    padding: 0.8rem 0;
+    color:rgb(34, 54, 1);
+}
+
+.review-body i {
+    font-size: 1.2rem;  /* Slightly smaller */
+    color:rgb(103, 132, 67);
+}
+.reviewer-rating p{
+    color:black;
+}
+
+.review {
+    line-height: 1.5rem;  /* Adjusted for readability */
+    font-size: 0.9rem;  /* Made slightly smaller */
+}
+
+/**Recipe Section**/
+.section{
+    width:100%;
+    padding:2rem 0 5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+.section-detail{
+    width:45%;
+    min-width:300px;
+    margin-left:auto;
+    transform: translateX(0); /* Reset or adjust position */
+    text-align: left;
+
+}
+.section-highlight{
+    padding:.7rem 1rem;     /* .7rem 1rem */
+    border-radius:.2rem;
+    background: #d2e3b6;
+    color:#4d5d34;
+}
+.section-info{
+    line-height:2rem;
+    margin-bottom: 2rem;
+}
+section{
+    position:relative;
+    padding:6rem 10vw;
+}
+.food-image-container{
+    transform: scale(0.8) translateX(70px); /* Scale down and shift right */
+    margin-left: 50px; /* Adjust further if needed */
+}
+
+.btn {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: .3rem;
+    font-size: 1rem;
+    color:#60763d;  
+    background:#b2c493;
+    gap: 2rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.btn a {
+    color: inherit;  
+    text-decoration: none; 
+    display: block;  
+    width: 100%;
+    height: 100%;
+}
+.btn:active {
+    transform: scale(0.95); 
+    background: #c1d6a4; 
+}
+.section-detail {
+    width: 45%;
+    min-width: 300px;
+    margin-left: auto;
+    transform: translateX(65px); /* Adjust the pixel value to shift more */
+}
+
+
+.circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: transparent;
+    border: 0.1rem solid #7e935c;
+}
+
+.circle span {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #599039;
+}
+
+/* Positioning dots along the circular path */
+.circle span:nth-child(1) {
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle span:nth-child(2) {
+    top: 20%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.circle span:nth-child(3) {
+    top: 20%;
+    right: 10%;
+    transform: translate(50%, -50%);
+}
+
+.circle span:nth-child(4) {
+    bottom: 28%;
+    left: 5%;
+    transform: translate(-50%, 50%);
+}
+
+.circle span:nth-child(5) {
+    bottom: 27.9%;
+    right: 5%;
+    transform: translate(50%, 50%);
+}
+
+.circle span:nth-child(6) {
+    bottom: -0.35%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+.circle:nth-child(2){
+    background:transparent;
+    z-index:-1;
+    transform:translate(-50%, -50%) scale(1) rotate(30deg);
+}
+.food-img{
+    position:absolute;
+    border-radius:100%;
+    box-shadow:0 1rem 1rem rgb(171, 170, 170);
+    width:10rem;
+    transform:translate(-50%, -50%);
+}
+.food-img:nth-child(1){
+    width:20rem;
+    top:50%;
+    left:50%;
+}
+.food-img:nth-child(2){
+    width:10rem;
+    top:13%;
+    left:90%;
+ 
+}
+.food-img:nth-child(3){
+    width:8.4rem;
+    top:55%;
+    left:103%;
+ 
+}
+.food-img:nth-child(4){
+    width:8rem;
+    top:93%;
+    left:80%;
+}
+.food-img:nth-child(5){
+    width:6rem;
+    top:100%;
+    left:40%;
+ 
+}
+.food-img:nth-child(6){
+    width:4rem;
+    top:80%;
+    left:10%;
+ 
+}
+
+
+
+/******recipies*******/
+/* New Section for Carousel Content */
+#NewCarouselSection {
+    position: relative;
+    padding: 6rem 10vw;
+}
+
+/* Carousel Wrapper */
+#NewCarouselSection .carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0;
+}
+
+/* Carousel Container */
+#NewCarouselSection #recipe-carousel {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 400px;
+}
+
+/* Carousel Slides */
+#NewCarouselSection .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual Sections */
+#NewCarouselSection .section {
+    flex: 0 0 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#NewCarouselSection .section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4d5d34;
+}
+
+#NewCarouselSection .section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Recipe Container */
+#NewCarouselSection .recipe-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Recipe Cards */
+#NewCarouselSection .recipe-card {
+    width: 200px;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#NewCarouselSection .recipe-card .card-front,
+#NewCarouselSection .recipe-card .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    transition: transform 0.6s;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#NewCarouselSection .recipe-card .card-front {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#NewCarouselSection .recipe-card img {
+    width: 100%;
+    height: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+#NewCarouselSection .recipe-card h3 {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #4d5d34;
+}
+
+/* Structured Recipe Instructions */
+#NewCarouselSection .recipe-card .card-back {
+    background: #b6cc81;
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-y: auto;
+    height: 100%;
+}
+
+#NewCarouselSection .recipe-card .card-back h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+#NewCarouselSection .recipe-card .card-back ol {
+    padding-left: 20px;
+    margin: 0;
+    list-style-type: decimal;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+#NewCarouselSection .recipe-card .card-back li {
+    margin-bottom: 8px;
+    word-wrap: break-word;
+    font-size: 13px;
+}
+
+#NewCarouselSection .recipe-card.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+#NewCarouselSection .recipe-card.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+/* Carousel Navigation Buttons */
+#NewCarouselSection button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background:rgba(0, 0, 0, 0.5);   
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+#NewCarouselSection button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#NewCarouselSection .prev {
+    left: 10px;
+}
+
+#NewCarouselSection .next {
+    right: 10px;
+}
+
+
+
+/**.blueberries{
+    position:absolute;
+    width:10rem;
+    height:10rem;
+    overflow:hidden;
+    z-index:2;
+}
+
+.blueberries img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.blueberries.left{
+    left:-4.5%;
+    bottom:-16%;
+    transform:scale(1) rotate(30deg);
+}**/
+
+/******NutriZone********/
+#nuti-section{
+    padding-bottom:0;
+}
+/**#nuti-section::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#e7f1d8;
+    z-index:-1;
+
+}**/
+.about{
+    width:30%;
+    margin-left:auto;
+    min-width:250px;
+}
+.about-title{
+    font-size:2rem;
+    text-transform:capitalize;
+    color:#4E7337;
+}
+.about-info{
+    margin:2rem 0 4rem;
+    line-height:2rem;
+
+}
+.service{
+    border-radius:.5rem;
+    margin-bottom:2rem;
+    padding:1.5rem;
+    box-shadow:0 .5rem 1rem rgb(146, 146, 146);
+}
+.service-title{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+}
+.service-img1{
+    width:2.5rem;
+    height:2.5rem;
+}
+.service-img2{
+    width:3.5rem;
+    height:3.5rem;
+}
+.service-img{
+    width:3.5rem;
+    height:3.5rem;
+}
+.service-name{
+    font-weight:700;
+}
+.service-detail{
+    margin-top:1rem;
+    line-height:1.3rem;
+    opacity:.75;
+    color:#666;
+}
+.nuti-section-review-container{
+    position:absolute;
+    left:-10%;
+    width:40rem;  /**40**/
+    height:40rem;
+}
+.nuti-section-review-container .circle{
+    background-color: transparent;
+    left:20%;
+    transform:translate(-50%, -50%);
+
+}
+.nuti-section-review-container .circle::before,
+.nuti-section-review-container .circle::after
+{
+    content:'';
+    position:absolute;
+    top:50%;   /**60**/
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;  /**90**/
+    height:90%;
+    border:.1rem solid #7e935c;
+    border-radius:100%;
+
+}
+.nuti-section-review-container .circle::after{
+    width:110%;   /**110**/
+    height:110%;
+}
+.GreekYogurt {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    transform: scale(0.89);
+    left: -25%;
+    top: 5%; /* Adjust this value to move it further down */
+    filter:drop-shadow(0 1rem 1rem rgb(146, 146, 146));
+}
+
+
+
+
+
+.review-wrapper{
+    position:absolute;
+    display:flex;
+    gap:1rem;
+}
+
+
+@keyframes slow-vertical-shake-1 {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-2px); }
+    50% { transform: translateY(2px); }
+    75% { transform: translateY(-1px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes slow-vertical-shake-2 {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-1px); }
+    50% { transform: translateY(3px); }
+    75% { transform: translateY(-2px); }
+    100% { transform: translateY(0); }
+}
+
+.review-wrapper:nth-child(odd) .review-box {
+    animation: slow-vertical-shake-1 3.5s infinite ease-in-out; /* Slow and smooth shake */
+}
+
+.review-wrapper:nth-child(even) .review-box {
+    animation: slow-vertical-shake-2 4s infinite ease-in-out; /* Slightly different shake pattern */
+}
+
+.review-wrapper .review-box {
+    position: relative;
+    inset: 0;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.8); /* Transparent white */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid rgba(200, 200, 200, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    backdrop-filter: blur(8px);
+}
+
+.review-box .review-body {
+    margin-top: -5px; /* Shift content slightly up */
+    font-style: italic;
+    color: #333;
+    line-height: 1.3;
+}
+
+.review-box .reviewer-info {
+    margin-bottom: 0.3rem;
+}
+
+.review-box .reviewer-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.review-box .reviewer-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #222;
+}
+
+
+/* Style the form container */
+.message-form {
+    width: 100%;
+    max-width: 500px; /* Adjust width */
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title and Subtitle */
+.form-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.form-subtitle {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Style input fields */
+.form-group {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Style the textarea */
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Submit button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+/**.review-wrapper.active{
+    z-index:2;
+}**/
+
+.review-wrapper.active .revew-box{
+    transform:scale(0.85);
+
+}
+.nuti-section-review-container .review-wrapper:nth-child(1){
+    bottom:75%;
+    left:22%;
+
+   
+}
+.nuti-section-review-container .review-wrapper:nth-child(2){
+    bottom:40%;
+    left:63%;
+}
+.nuti-section-review-container .review-wrapper:nth-child(3){
+    bottom:2%;
+    left:57%;
+}
+.nuti-section-review-container .review-wrapper:nth-child(4){
+    /**bottom:10%;**/
+    bottom:-34%;
+    left:30%;  /**left**/
+}
+/**.nuti-section-review-container .review-wrapper:nth-child(5){
+    bottom:-30%;
+    left:31%;
+}**/
+
+
+/**FAQ Section**/
+#faq-section {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 50px auto;
+    width: 80%;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color:#819c56;
+}
+
+.faq {
+    background: white;
+    width: 70%;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.question-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.question {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color:#9da98b;
+}
+
+.question-box i {
+    font-size: 1.5rem;
+    text-align: center;
+    transition: transform 0.25s ease-in-out;
+    color: #4d5d34;
+}
+
+.answer-box {
+    display: none;
+    border-top: 1px solid #ddd;
+    padding: 1.5rem;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+}
+
+.faq.active .answer-box {
+    display: block;
+}
+
+.faq.active .question-box i {
+    transform: rotate(90deg);
+}
+
+
+/**expert section**/
+/* General Styles */
+/**body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+  }**/
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #819c56;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  
+  /* Expert Section */
+
+  .expert-section {
+    padding: 60px 20px;
+    
+  }
+  
+  .expert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .expert-card {
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .expert-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .expert-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+  }
+  
+  .expert-card h3 {
+    font-size: 1.5rem;
+    color: #819c56;
+    margin-bottom: 10px;
+  }
+  
+  .expert-title {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+  }
+  
+  .expert-bio {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+
+
+
+
+
+
+
+/* FAQ Section Styling */
+/* FAQ Section Styling */
+#faq-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.faq-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-content {
+    flex: 1 1 60%;
+}
+
+.section-title {
+    font-size: 2rem;
+    color:#819c56;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.faq {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.question {
+    font-size: 1.1rem;
+    color:#777;
+    margin: 0;
+}
+
+.fa-x {
+    font-size: 1.2rem;
+    color: #777;
+    cursor: pointer;
+}
+
+.answer-box {
+    padding: 15px;
+    background-color: #fdfdfd;
+    border-top: 1px solid #e0e0e0;
+}
+
+.answer {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Message Form Styling */
+.message-form {
+    flex: 1 1 35%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    font-size: 1.8rem;
+    color:#819c56;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form-subtitle {
+    font-size: 1rem;
+    color: #777;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #819c56;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #88a55c;
+}
+
+
+
+
+
+
+/* General Reset */
+
+   /* ... (your existing CSS) ... */
+
+   footer {
+    background-color:#e9ede1; /* Light background color */
+    padding: 40px 20px; /* Increased padding */
+    font-family: 'Lato', sans-serif;
+    color:#758b51; /* Darker text color for better contrast */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: space-around; /* Distributes space evenly */
+    max-width: 1200px; /* Sets a maximum width for larger screens */
+    margin: 0 auto; /* Centers the container */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Changed to space-between */
+    align-items: flex-start; /* Align items to the top */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.footer-section {
+    flex: 1 1 250px; /* Each section takes up equal space, min-width 250px */
+    margin-bottom: 20px; /* Adds space between sections */
+}
+
+.footer-section h3 {
+    color: #758b51; /* Blue color for headings */
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color:#758b51; /* Slightly lighter link color */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.footer-section a:hover {
+    color:#76b208df; /* Blue color on hover */
+}
+
+.contact-info {
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-links a {
+    margin-right: 15px;
+    font-size: 1.5em; /* Larger social icons */
+    color:#758b51;  /* Slightly lighter color for social icons */
+}
+
+.social-links a:hover {
+    color:#76b208df; /* Blue color on hover */
+}
+
+.bottom-bar {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ddd; /* Subtle top border */
+    margin-top: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        justify-content: center; /* Center sections on smaller screens */
+    }
+    .footer-section {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+    .footer-section.follow-us {
+        margin-left: 0; /* Remove left margin on smaller screens */
+        text-align: center; /* Center text on smaller screens */
+    }
+    .social-links {
+        justify-content: center; /* Center social icons on smaller screens */
+    }
+}
+
+
+
+
+
+
+
+  
+
+
+
+
+
+/**Responsive***/
+/***media querry***/
+@media(max-width: 1200px){
+    html{
+        font-size:14.5px;
+    }
+
+    /**Hero-section**/
+    #hero-section{
+        min-height:auto;
+        padding:10rem 10vw;
+    }
+    .hero-content{
+        width:50%;
+    }
+    .hero-img-container{
+        transform:scale(0.85) translateX(2rem);
+    }
+    .hero-img:nth-child(1){
+        width:18rem;
+        left:-5%;
+        top:-5%;
+    }
+    .hero-img:nth-child(2){
+        width:15rem;
+        left:-9%;
+        top:17%;
+    }
+    .hero-img:nth-child(3){
+        width:12rem;
+        left:55%;
+        top:-20%;
+    }
+    .review-box{
+        width:25rem;
+        bottom:0;
+        left:0;
+    }
+
+    /**Recipe-Section***/
+    section{
+        padding:3rem 10vw;
+    }
+    .food-image-container{
+        transform:scale(0.75) translateX(-6rem);
+    }
+
+    /**nuti-section**/
+    .nuti-section-review-container{
+        transform:scale(0.9) translateX(-15%);
+    }
+
+}
+
+
+  

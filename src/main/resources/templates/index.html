@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriHive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Style-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!--logo-->
+            <img src="Logo2.png" class="logo" alt="NutiHive">
+            <ul class="links-container">
+                <li class="list iems"><a href="#hero-section" class="links">HomePage</a></li>
+                <li class="list iems"><a href="#RecipeSection" class="links">RecipeSection</a></li>
+                <li class="list iems"><a href="#nuti-section" class="links">NutriZone</a></li>
+                <li class="list iems"><a href="#faq-section" class="links">HealthSphere</a></li>
+                <li class="list iems"><a href="diabetics.html" class="links">DiabetesCare</a></li>
+                <li class="list iems"><a href="lf2.html" class="links">Login</a></li> </ul>
+            </ul>
+
+        </nav>
+        <!--Hero Section-->
+        <main id="hero-section">
+            <!--HeroContent-->
+            <div class="hero-content">
+                <h1 class="hero-heading">Nourish Smart, Live Healthy!</h1>
+                <p class="hero-line">Your go-to guide for <b>personalized nutrition and wellness</b>. Get expert meal plans, health insights, and tracking tools for <b>diabetes, autoimmune care, and overall well-being</b>.
+                <br> <br> <h3>Start your journey today!</h3> </p>
+            </div>
+           <!--<div class="hero-action-btn-container">
+                <button class="btn"><a href="" class="links">NutriZone</a></button>
+            </div>--> 
+
+            <!--image Container-->
+            <div class="hero-img-container">
+                <div class="background-ele">
+                    <div class="ellipse"></div>
+                    <div class="ellipse"></div>
+                    <div class="ellipse"></div>
+               </div>
+            <div class="foreground-elements">
+                <img src="Cons(new).png" class="hero-img1" alt="">
+                <img src="c2.png" class="hero-img1" alt="">
+                <img src="c3.png" class="hero-img1" alt="">
+
+                <div class="review-box">
+                    <div class="reviewer-info">
+                        <img src="fd3.jpg" class="reviewer-img" alt="f1">
+
+                        <div class="reviewer">
+                              <div class="reviewer-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <p>4.5</p>
+                              </div>
+                               <h2 class="reviewer-name">Vanya</h2>
+                        </div>
+                    </div>
+                    <div class="review-body">
+                        <i class="fa-duotone fa-solid fa-quote-left"></i>
+                        <p>NutriHive made healthy eating so simple! The expert tips and meal ideas helped me manage my blood sugar levels effortlessly. I finally feel confident about my food choices!</p>
+                    </div>
+
+                </div>
+            </div>
+           
+           </div>
+
+        </main>
+    </header>
+    <!--Recipe Section-->
+    <section id="RecipeSection">
+        <div class="section">
+            <!--food Image Container-->
+             
+            <div class="food-image-container">
+                <div class="circle">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                </div>
+                <div class="circle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                 </div>
+
+                 <div>
+                    <img src="OATSMEAL.png" class="food-img">
+                    <img src="oats.png" class="food-img">
+                    <img src="starwberries.png" class="food-img">
+                    <img src="blueberries.png" class="food-img">
+                    <img src="walnuts.png" class="food-img">
+                    <img src="honey.png" class="food-img">
+                 </div>
+            </div>
+            <!--Section Content-->
+            <div class="section-detail">
+                <spann class="section-highlight">Eat Wise, Live Bright!</spann>
+                <p class="section-info">Discover the perfect balance of taste and nutrition—<br>wholesome recipes crafted for a healthier you!</p>
+
+                <button class="btn"><a href="https://nutritionsource.hsph.harvard.edu/recipes-complete-list/" target="_blank">Discover More</a></button>
+            </div>
+
+        </div>
+</section>
+
+
+
+<!-- New Section for Carousel Content -->
+<section id="NewCarouselSection">
+    <div class="carousel-wrapper">
+        <div id="recipe-carousel">
+            <div class="carousel">
+                <!-- Kids Section -->
+                <div class="section">
+                    <h2>Little Bites Wonderland</h2>
+                    <p>Little bites, big smiles! Eat healthy, grow happy!</p>
+                    <div class="recipe-container">
+                        <div class="recipe-card" onclick="toggleRecipe(this)">
+                            <div class="card-front">
+                                <img src="Pancake(n).jpg" alt="Banana Oat Pancakes">
+                                <h3>Banana Oat Pancakes</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>How to Make It</h3>
+                                <ul>
+                                    <li>Mash bananas in a bowl.</li>
+                                    <li>Mix bananas, oats, milk, egg, and spices.</li>
+                                    <li>Cook on a pan until golden brown.</li>
+                                    <li>Serve warm with honey and fruits.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="recipe-card" onclick="toggleRecipe(this)">
+                            <div class="card-front">
+                                <img src="muffins(n).jpg" alt="Veggie Cheese Muffins">
+                                <h3>Veggie-Cheese Muffins</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>How to Make It</h3>
+                                <ul>
+                                    <li>Preheat oven to 180°C.</li>
+                                    <li>Mix flour, eggs, veggies, and cheese.</li>
+                                    <li>Bake for 20 minutes.</li>
+                                    <li>Let cool and enjoy!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diabetic-Friendly Section -->
+                <div class="section">
+                    <h2>Diabetic Delights </h2>
+                    <p>Enjoy Flavorful Meals Without the Sugar Spikes</p>
+                    <div class="recipe-container">
+                        <div class="recipe-card" onclick="toggleRecipe(this)">
+                            <div class="card-front">
+                                <img src="quinoa-bowl.jpg" alt="Quinoa & Veggie Bowl">
+                                <h3>Quinoa & Veggie Bowl</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>How to Make It</h3>
+                                <ul>
+                                    <li>Cook quinoa until fluffy.</li>
+                                    <li>Stir-fry vegetables with olive oil.</li>
+                                    <li>Mix everything and add seasonings.</li>
+                                    <li>Top with lemon juice & enjoy.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="recipe-card" onclick="toggleRecipe(this)">
+                            <div class="card-front">
+                                <img src="chickkpea.jpeg" alt="Spinach & Chickpea Salad">
+                                <h3>Spinach & Chickpea Salad</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>How to Make It</h3>
+                                <ul>
+                                    <li>Chop fresh spinach & veggies.</li>
+                                    <li>Add boiled chickpeas.</li>
+                                    <li>Mix with olive oil, lemon, & spices.</li>
+                                    <li>Enjoy a protein-packed meal!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Autoimmune Disease-Friendly Section -->
+                <div class="section">
+                    <h2>Autoimmune Eats</h2>
+                    <p>Healing Foods for a Happy Body</p>
+                    <div class="recipe-container">
+                        <div class="recipe-card" onclick="toggleRecipe(this)">
+                            <div class="card-front">
+                                <img src="turmericsmoothie.jpeg" alt="Turmeric-Ginger Smoothie">
+                                <h3>Turmeric-Ginger Smoothie</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>How to Make It</h3>
+                                <ul>
+                                    <li>Blend turmeric, ginger, banana, and coconut milk.</li>
+                                    <li>Add honey & cinnamon.</li>
+                                    <li>Blend until smooth & creamy.</li>
+                                    <li>Serve chilled & enjoy!</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="recipe-card" onclick="toggleRecipe(this)">
+                            <div class="card-front">
+                                <img src="sweetpatato.jpeg" alt="Sweet Potato & Salmon Bowl">
+                                <h3>Sweet Potato & Salmon Bowl</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>How to Make It</h3>
+                                <ul>
+                                    <li>Bake sweet potatoes until soft.</li>
+                                    <li>Grill salmon with herbs.</li>
+                                    <li>Combine everything in a bowl.</li>
+                                    <li>Enjoy a power-packed meal!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brain-Boosting Foods Section -->
+                <div class="section">
+                    <h2>Brain Boost Bites </h2>
+                    <p>Boost Your Brain Power with Every Bite</p>
+                    <div class="recipe-container">
+                        <div class="recipe-card" onclick="toggleRecipe(this)">
+                            <div class="card-front">
+                                <img src="chia-seed-pudding.webp" alt="Chia Seed Pudding">
+                                <h3>Chia Seed Pudding</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>How to Make It</h3>
+                                <ul>
+                                    <li>Mix chia seeds with almond milk.</li>
+                                    <li>Add honey & refrigerate overnight.</li>
+                                    <li>Top with nuts & berries.</li>
+                                    <li>Enjoy a healthy breakfast!</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="recipe-card" onclick="toggleRecipe(this)">
+                            <div class="card-front">
+                                <img src="avacado.jpeg" alt="Avocado & Salmon Toast">
+                                <h3>Avocado & Salmon Toast</h3>
+                            </div>
+                            <div class="card-back">
+                                <h3>How to Make It</h3>
+                                <ul>
+                                    <li>Toast whole-grain bread.</li>
+                                    <li>Spread mashed avocado.</li>
+                                    <li>Top with smoked salmon.</li>
+                                    <li>Enjoy a brain-boosting meal!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Navigation -->
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!--<div class="blueberries left">
+    <img src="Blueberries(bg).png" alt="BB">
+    </div>-->
+</section>
+
+<!------NutriZone------->
+<section id="nuti-section">
+     <div class="nuti-section-review-container">
+        <div class="circle"></div>
+
+        <img src="yogurt2.png" class="GreekYogurt" alt="yogurt">
+
+        <div class="review-container">
+            <div class="review-wrapper">
+            <img src="Boy1.png" class="reviewer-img" alt="f1">
+            <div class="review-box">
+                <div class="reviewer-info">
+                    <div class="reviewer">
+                          <div class="reviewer-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <p>4.5</p>
+                          </div>
+                           <h2 class="reviewer-name">Aarav S.</h2>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <i class="fa-duotone fa-solid fa-quote-left"></i>
+                    <p>NutriHive made healthy eating effortless! Their personalized plans fit my lifestyle perfectly.</p>
+                </div>
+
+            </div>
+            </div>
+
+            <div class="review-wrapper">
+                <img src="Girl1.png" class="reviewer-img" alt="f1">
+                <div class="review-box">
+                    <div class="reviewer-info">
+                        <div class="reviewer">
+                              <div class="reviewer-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <p>4.5</p>
+                              </div>
+                               <h2 class="reviewer-name">Aria</h2>
+                        </div>
+                    </div>
+                    <div class="review-body">
+                        <i class="fa-duotone fa-solid fa-quote-left"></i>
+                        <p>Finally, a nutrition service that understands real food! Feeling more energized than ever.</p>
+                    </div>
+    
+                </div>
+                </div>
+
+
+                <div class="review-wrapper">
+                    <img src="boy3.jpg" class="reviewer-img" alt="f1">
+                    <div class="review-box">
+                        <div class="reviewer-info">
+                            <div class="reviewer">
+                                  <div class="reviewer-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <p>4.5</p>
+                                  </div>
+                                   <h2 class="reviewer-name">Aryan</h2>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <i class="fa-duotone fa-solid fa-quote-left"></i>
+                            <p>Lost 5kg in a month without starving! Their meal plans are a game-changer.</p>
+                        </div>
+        
+                    </div>
+                    </div>
+
+                    <div class="review-wrapper">
+                        <img src="girl6.png" class="reviewer-img" alt="f1">
+                        <div class="review-box">
+                            <div class="reviewer-info">
+                                <div class="reviewer">
+                                      <div class="reviewer-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                        <p>4.5</p>
+                                      </div>
+                                       <h2 class="reviewer-name">Tanishka</h2>
+                                </div>
+                            </div>
+                            <div class="review-body">
+                                <i class="fa-duotone fa-solid fa-quote-left"></i>
+                                <p>Tasty, nutritious, and super easy to follow! Highly recommend NutriHive!</p>
+                            </div>
+            
+                        </div>
+                        </div>
+
+
+
+                        <!--<div class="review-wrapper">
+                            <img src="Girl4.png" class="reviewer-img" alt="f1">
+                            <div class="review-box">
+                                <div class="reviewer-info">
+                                    <div class="reviewer">
+                                          <div class="reviewer-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                            <p>4.5</p>
+                                          </div>
+                                           <h2 class="reviewer-name">Neha D.</h2>
+                                    </div>
+                                </div>
+                                <div class="review-body">
+                                    <i class="fa-duotone fa-solid fa-quote-left"></i>
+                                    <p>Great customer support and science-backed nutrition advice. Love it!</p>
+                                </div>
+                
+                            </div>
+                            </div>-->
+
+                            
+        </div>
+     </div>
+
+    <!----nutri-services------>
+    <div class="about">
+        <h2 class="about-title">Why Us?</h2>
+        <p class="about-info">Fuel Your Wellness with Science & Care – <br> Personalized, Trusted, and Made Just for You!</p>
+
+        <div class="services-container">
+            <div class="service">
+                 <div class="service-title">
+                      <img src="Scienceapproach.png" class="service-img1" alt="science">
+                      <h3 class="service-name">Science-Backed Nutrition</h3>
+                </div>
+                <p class="service-detail">Our research-backed approach ensures expert-driven nutritional guidance for a healthier lifestyle.</p>
+            </div>
+
+            <div class="service">
+                <div class="service-title">
+                     <img src="Personalised.png" class="service-img2" alt="personalized">
+                     <h3 class="service-name">Personalized for You</h3>
+               </div>
+               <p class="service-detail">No one-size-fits-all! We customize nutrition plans to fit your goals, preferences, and health needs.</p>
+           </div>
+
+
+           <div class="service">
+            <div class="service-title">
+                 <img src="Trusted2.png" class="service-img" alt="trusted">
+                 <h3 class="service-name">Trusted by Experts & Users</h3>
+           </div>
+           <p class="service-detail">Backed by experts and a thriving community, Nutrihive is your trusted wellness partner.</p>
+       </div>
+        </div>
+    </div>
+</section>
+
+
+<!--expert section-->
+<section class="expert-section">
+    <h2>Our Experts</h2>
+    <p class="section-description">Meet the experts at NutriHive, committed to delivering personalized nutrition guidance and empowering healthier lifestyles with their expertise.</p>
+    <div class="expert-grid">
+      <!-- Nutritionist 1 -->
+      <div class="expert-card">
+        <img src="doctor1.jpg" alt="Nutritionist 1">
+        <h3>Dr. Siara Desai</h3>
+        <p class="expert-title">Senior Nutritionist</p>
+        <p class="expert-bio">With over 10 years of experience in clinical nutrition, Dr. Desai specializes in creating personalized diet plans for optimal health and wellness.</p>
+      </div>
+      <!-- Nutritionist 2 -->
+      <div class="expert-card">
+        <img src="sn.jpg" alt="Nutritionist 2">
+        <h3>Dr. John Matthews</h3>
+        <p class="expert-title">Clinical Nutritionist</p>
+        <p class="expert-bio">Dr. Matthews, a clinical nutritionist, specializes in diet-based care for diabetes, heart health, and digestive wellness, promoting healing through nutrition.</p>
+      </div>
+      <!-- AI Specialist 1 -->
+      <div class="expert-card">
+        <img src="Ndoctor2.jpg" alt="AI Specialist 1">
+        <h3>Dr. Naisha Yadav</h3>
+        <p class="expert-title">Pediatric Nutritionist</p>
+        <p class="expert-bio">Dr. Naisha, a pediatric nutrition expert, helps children build healthy eating habits with tailored diets for growth and development.</p>
+      </div>
+      <!-- AI Specialist 2 -->
+      <div class="expert-card">
+        <img src="ADS.jpg" alt="AI Specialist 2">
+        <h3>Dr. Shaurya Rathore</h3>
+        <p class="expert-title">Food Scientist & Researcher</p>
+        <p class="expert-bio">Dr. Rathore, a food scientist and researcher, specializes in food safety, ingredient analysis, and sustainable nutrition for healthier innovations.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+<!--FAQ Section-->
+<section id="faq-section">
+    <div class="faq-container">
+        <!-- FAQ Section -->
+        <div class="faq-content">
+            <h1 class="section-title">Frequently Asked Questions</h1>
+            <div class="faq">
+                <div class="question-box">
+                    <h3 class="question">What foods should I avoid for better health?</h3>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="answer-box">
+                    <p class="answer">Limit processed foods, sugary drinks, trans fats, excessive salt, and alcohol to maintain good health.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question-box">
+                    <h3 class="question">Can I consult a nutritionist on NutriHive?</h3>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="answer-box">
+                    <p class="answer">Yes! NutriHive connects you with qualified nutritionists for personalized consultations and dietary guidance.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question-box">
+                    <h3 class="question">Is NutriHive suitable for special diets (vegan, keto, diabetic)?</h3>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="answer-box">
+                    <p class="answer">Absolutely! NutriHive offers customized meal plans for various dietary preferences and health conditions, including vegan, keto, gluten-free, diabetic-friendly diets, and more.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <div class="question-box">
+                    <h3 class="question">Are gluten-free diets necessary for everyone?</h3>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="answer-box">
+                    <p class="answer">No, only people with celiac disease or gluten sensitivity need to avoid gluten. Others can include whole grains like wheat and barley in their diet.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message/Question Form Section -->
+		<div class="message-form">
+			<h2 class="form-title">Have a Question?</h2>
+			<p class="form-subtitle">Send us a message, and we'll get back to you soon!</p>
+		
+			<form th:action="@{/submit-form}" method="POST">
+				<div class="form-group">
+					<input type="text" name="name" placeholder="Your Name" required>
+				</div>
+				<div class="form-group">
+					<input type="email" name="email" placeholder="Your Email" required>
+				</div>
+				<div class="form-group">
+					<textarea name="message" placeholder="Your Message or Question" rows="5" required></textarea>
+				</div>
+				<button type="submit" class="submit-btn" onclick="showSuccessMessage()">Send Message</button>
+			</form>
+		</div>
+		</div>
+		</section>
+
+
+
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#hero-section">Home</a></li>
+                <li><a href="#RecipeSection">Recipes</a></li>
+                <li><a href="#nuti-section">NutriZone</a></li>
+                <li><a href="#faq-section">HealthSphere</a></li>
+                <li><a href="diabetics.html">Diabetes Care</a></li>
+                <li><a href="lf2.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <p>123 Nutrition Street<br>
+                City, State, Zip<br>
+                Email: info@nutrihive.com<br>
+                Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <p>&copy; 2023 NutriHive. All rights reserved.</p>
+    </div>
+</footer>
+      
+
+<script src="app.js"></script>
+
+
+
+
+<script>
+    let currentSlide = 0;
+    
+        function moveSlide(direction) {
+            const carousel = document.querySelector(".carousel");
+            const sections = document.querySelectorAll(".section");
+            const totalSlides = sections.length;
+    
+        
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+    
+            carousel.style.transform = `translateX(${-currentSlide * 100}%)`;
+        }
+    
+        function toggleRecipe(card) {
+            card.classList.toggle("flipped");
+        }
+		
+		function showSuccessMessage() {
+		    alert("✅message sent...");
+		}
+		
+    </script>
+    
+
+
+</body>
+</html>

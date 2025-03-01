@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Health Registration Form</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<style>
+		/* General Styles */
+		body {
+			font-family: 'Lato', sans-serif;
+			color: #4E7337;
+			margin: 0;
+			padding: 0;
+			background-image: url("na11.jpg");
+			/* Replace with your image URL */
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		.container {
+			max-width: 600px;
+			margin: 50px auto;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.9);
+			border-radius: 10px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			text-align: center;
+		}
+
+		h2 {
+			font-size: 2rem;
+			color: #4E7337;
+			margin-bottom: 20px;
+		}
+
+		.form-group {
+			margin-bottom: 15px;
+			text-align: left;
+		}
+
+		.form-group label {
+			display: block;
+			font-size: 1rem;
+			margin-bottom: 5px;
+			color: #4E7337;
+		}
+
+		.form-group input,
+		.form-group select {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			font-size: 1rem;
+			color: #333;
+			box-sizing: border-box;
+		}
+
+		.btn {
+			width: 100%;
+			padding: 12px;
+			background-color: #4E7337;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.btn:hover {
+			background-color: #5a8a3d;
+		}
+
+		#blood-sugar-group {
+			display: none;
+		}
+
+		#success-message {
+			display: none;
+			color: green;
+			font-size: 1.2rem;
+			margin-top: 10px;
+		}
+
+		#health-chart-section {
+			display: none;
+			margin-top: 30px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>Health Registration Form</h2>
+		<form id="health-form">
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" placeholder="Enter your name" required>
+			</div>
+
+			<div class="form-group">
+				<label for="age">Age:</label>
+				<input type="number" id="age" name="age" placeholder="Enter your age" required>
+			</div>
+
+			<div class="form-group">
+				<label for="gender">Gender:</label>
+				<select id="gender" name="gender" required>
+					<option value="">Select your gender</option>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="health-condition">Health Condition:</label>
+				<select id="health-condition" name="health-condition" required>
+					<option value="">Select your health condition</option>
+					<option value="diabetic">Diabetic</option>
+					<option value="overweight">Overweight</option>
+					<option value="underweight">Underweight</option>
+					<option value="asthma">Asthma</option>
+					<option value="autoimmune">Autoimmune Disease</option>
+					<option value="normal">Normal</option>
+				</select>
+			</div>
+
+			<div class="form-group" id="blood-sugar-group">
+				<label for="blood-sugar">Blood Sugar Level (mg/dL):</label>
+				<input type="number" id="blood-sugar" name="blood-sugar" placeholder="Enter your blood sugar level">
+			</div>
+
+			<div class="form-group">
+				<label for="weight">Weight (kg):</label>
+				<input type="number" id="weight" name="weight" placeholder="Enter your weight" required>
+			</div>
+
+			<div class="form-group">
+				<label for="height">Height (cm):</label>
+				<input type="number" id="height" name="height" placeholder="Enter your height" required>
+			</div>
+
+			<button type="submit" class="btn">Submit</button>
+			<p id="success-message">✅ Health data saved successfully!</p>
+		</form>
+	</div>
+	<section id="health-chart-section" style="display: none;">
+		<div class="container">
+			<h2>Your Health Chart</h2>
+			<div id="chart-container">
+				<canvas id="health-chart"></canvas>
+			</div>
+			<div id="health-recommendations">
+				<h3>Health Recommendations</h3>
+				<ul id="recommendations-list"></ul>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			if (localStorage.getItem('isLoggedIn') !== 'true') {
+				alert("You must log in first.");
+				window.location.href = 'lf2.html';
+			}
+
+			const userEmail = localStorage.getItem('userEmail');
+			console.log("User's email:", userEmail);
+
+			document.getElementById('health-condition').addEventListener('change', function () {
+				document.getElementById('blood-sugar-group').style.display = (this.value === 'diabetic') ? 'block' : 'none';
+			});
+
+			document.getElementById('health-form').addEventListener('submit', function (e) {
+				e.preventDefault();
+
+				const name = document.getElementById('name').value;
+				const age = parseInt(document.getElementById('age').value);
+				const gender = document.getElementById('gender').value;
+				const healthCondition = document.getElementById('health-condition').value;
+				const weight = parseFloat(document.getElementById('weight').value);
+				const height = parseFloat(document.getElementById('height').value);
+				const bloodSugar = document.getElementById('blood-sugar').value ? parseFloat(document.getElementById('blood-sugar').value) : null;
+				const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+
+				const healthRecord = {name, age, gender, healthCondition, bloodSugar, weight, height, bmi, userEmail};
+
+				fetch('/nutri-hive/api/health/save', {
+					method: 'POST',
+					headers: {'Content-Type': 'application/json'},
+					body: JSON.stringify(healthRecord)
+				})
+					.then(response => response.json())
+					.then(data => {
+						document.getElementById('success-message').style.display = 'block';
+						document.getElementById('health-chart-section').style.display = 'block';
+						renderHealthChart(healthCondition, bmi, bloodSugar, gender, weight);
+					})
+					.catch(error => alert("❌ Error saving health data."));
+
+			});
+
+			function renderHealthChart(healthCondition, bmi, bloodSugar, gender, weight) {
+				const ctx = document.getElementById('health-chart').getContext('2d');
+				let chartData = {};
+
+				if (healthCondition === 'diabetic') {
+					chartData = {
+						labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+						datasets: [{
+							label: 'Blood Sugar Level (mg/dL)',
+							data: [bloodSugar, bloodSugar - 10, bloodSugar - 20, bloodSugar - 30],
+							borderColor: '#FF6384',
+							borderWidth: 2,
+							fill: false
+						}]
+					};
+				} else if (healthCondition === 'overweight' || healthCondition === 'underweight') {
+					chartData = {
+						labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+						datasets: [{
+							label: 'Weight (kg)',
+							data: [weight, weight - 2, weight - 4, weight - 6],
+							borderColor: '#36A2EB',
+							borderWidth: 2,
+							fill: false
+						}]
+					};
+				} else if (healthCondition === 'asthma') {
+					chartData = {
+						labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+						datasets: [{
+							label: 'Peak Flow Rate (L/min)',
+							data: [400, 420, 410, 430],
+							borderColor: '#FFCE56',
+							borderWidth: 2,
+							fill: false
+						}]
+					};
+				} else if (healthCondition === 'autoimmune') {
+					chartData = {
+						labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+						datasets: [{
+							label: 'Inflammation Markers',
+							data: [5, 4, 3, 2],
+							borderColor: '#4BC0C0',
+							borderWidth: 2,
+							fill: false
+						}]
+					};
+				} else {
+					chartData = {
+						labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+						datasets: [{
+							label: 'BMI',
+							data: [bmi, bmi - 1, bmi - 2, bmi - 3],
+							borderColor: '#4E7337',
+							borderWidth: 2,
+							fill: false
+						}]
+					};
+				}
+
+				// Render the chart
+				const chart = new Chart(ctx, {
+					type: 'line',
+					data: chartData,
+					options: {
+						scales: {
+							y: {
+								beginAtZero: false,
+								title: {
+									display: true,
+									text: healthCondition === 'diabetic' ? 'Blood Sugar (mg/dL)' :
+										healthCondition === 'overweight' || healthCondition === 'underweight' ? 'Weight (kg)' :
+											healthCondition === 'asthma' ? 'Peak Flow Rate (L/min)' :
+												healthCondition === 'autoimmune' ? 'Inflammation Markers' : 'BMI'
+								}
+							},
+							x: {
+								title: {
+									display: true,
+									text: 'Time'
+								}
+							}
+						}
+					}
+				});
+			}
+		});
+	</script>
+
+</body>
+
+</html>

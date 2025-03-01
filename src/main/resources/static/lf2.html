@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top-header">
+            <h3 class="a">Have an account?</h3>
+            <header>Login</header>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form" id="loginForm">
+            <form id="sendOtpForm">
+                <span>
+                    <i class="fa fa-user"></i>
+                    <input type="email" id="userEmail" placeholder="Enter your Email" required>
+                </span><br>
+                <button type="submit">Send OTP</button>
+            </form>
+        </div>
+
+        <!-- OTP Verification Form -->
+        <div class="form" id="otpForm" style="display: none;">
+            <form id="verifyOtpForm">
+                <span>
+                    <i class="fa fa-key"></i>
+                    <input type="text" id="otp" placeholder="Enter OTP" required>
+                </span><br>
+                <button type="submit">Verify OTP</button>
+                <button id="resendOTP" style="display: none;">Resend OTP</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sendOtpForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('userEmail').value;
+
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            fetch('/nutri-hive/api/auth/send-otp?email=' + encodeURIComponent(email), {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message); // Show success message
+
+                localStorage.setItem('userEmail', email);
+
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('otpForm').style.display = 'block';
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('verifyOtpForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = localStorage.getItem('userEmail');
+            const enteredOTP = document.getElementById('otp').value;
+
+            fetch('/nutri-hive/api/auth/verify-otp?email=' + encodeURIComponent(email) + '&otp=' + encodeURIComponent(enteredOTP), {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+
+                if (data.message.includes('successfully')) {
+                    window.location.href = 'form.html'; // Redirect to form page on success
+                } else {
+                    document.getElementById('resendOTP').style.display = 'block';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('resendOTP').addEventListener('click', function(event) {
+            event.preventDefault();
+            const email = localStorage.getItem('userEmail');
+
+            fetch('/nutri-hive/api/auth/send-otp?email=' + encodeURIComponent(email), {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message); // Show success message
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>
